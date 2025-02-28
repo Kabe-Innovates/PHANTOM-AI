@@ -1,0 +1,9 @@
+[
+    {
+        "url": "https://otx.alienvault.com/pulse/67b31942143b95827551dee8",
+        "title": "Don't Ghost the SocGholish: GhostWeaver Backdoor",
+        "description": "The article details a sophisticated malware infection chain involving SocGholish, MintsLoader, and the GhostWeaver backdoor. The attack begins with a fake browser update, progressing through multiple stages to deploy a PowerShell backdoor and various plugins. These components work together to steal sensitive information, including browser credentials, cryptocurrency wallet data, and Outlook contents. The malware utilizes advanced techniques such as process injection, JA3 fingerprint manipulation, and web injection to evade detection and intercept user data. The attackers primarily target non-AD-joined machines, suggesting a focus on smaller organizations or individual users with weaker security measures.",
+        "date": "2025-02-17T11:10:58.724000",
+        "predicted_class": "Ransomware",
+        "predicted_attack": 24.844288769155074,
+        "attacker_profile": 

@@ -1,0 +1,435 @@
+2025-02-28 21:49:06,392 - INFO - Starting Blog Scraper (Attempt 1/3)
+2025-02-28 21:49:06,393 - INFO - Starting AlienVault Scraper (Attempt 1/3)
+2025-02-28 21:49:08,313 - INFO - AlienVault Scraper completed successfully.
+2025-02-28 21:49:33,441 - INFO - Blog Scraper completed successfully.
+2025-03-01 01:25:33,720 - INFO - Starting Blog Scraper (Attempt 1/3)
+2025-03-01 01:25:33,721 - INFO - Starting AlienVault Scraper (Attempt 1/3)
+2025-03-01 01:26:06,122 - ERROR - AlienVault Scraper failed on attempt 1: localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 67c214b5b9ad4c708ff3b8c2, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+Traceback (most recent call last):
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\cyber-threat-scraper\main.py", line 32, in run_scraper
+    await asyncio.to_thread(scraper_func)
+  File "C:\Program Files\Python312\Lib\asyncio\threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\cyber-threat-scraper\scrapers\alienvault_otx_scraper.py", line 47, in fetch_alienvault_threats
+    insert_data(structured_data)
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\cyber-threat-scraper\database\mongo_client.py", line 10, in insert_data
+    collection.insert_many(data)
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\_csot.py", line 119, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\collection.py", line 975, in insert_many
+    blk.execute(write_concern, session, _Op.INSERT)
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\bulk.py", line 751, in execute
+    return self.execute_command(generator, write_concern, session, operation)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\bulk.py", line 604, in execute_command
+    _ = client._retryable_write(
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1896, in _retryable_write
+    return self._retry_with_session(retryable, func, s, bulk, operation, operation_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1782, in _retry_with_session
+    return self._retry_internal(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\_csot.py", line 119, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1828, in _retry_internal
+    ).run()
+      ^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2565, in run
+    return self._read() if self._is_read else self._write()
+                                              ^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2673, in _write
+    self._server = self._get_server()
+                   ^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2656, in _get_server
+    return self._client._select_server(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1647, in _select_server
+    server = topology.select_server(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\topology.py", line 402, in select_server
+    server = self._select_server(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\topology.py", line 380, in _select_server
+    servers = self.select_servers(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\topology.py", line 287, in select_servers
+    server_descriptions = self._select_servers_loop(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\topology.py", line 337, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 67c214b5b9ad4c708ff3b8c2, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2025-03-01 01:26:06,147 - INFO - Starting AlienVault Scraper (Attempt 2/3)
+2025-03-01 01:26:54,319 - ERROR - AlienVault Scraper failed on attempt 2: localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 67c214b5b9ad4c708ff3b8c2, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+Traceback (most recent call last):
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\cyber-threat-scraper\main.py", line 32, in run_scraper
+    await asyncio.to_thread(scraper_func)
+  File "C:\Program Files\Python312\Lib\asyncio\threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\cyber-threat-scraper\scrapers\alienvault_otx_scraper.py", line 47, in fetch_alienvault_threats
+    insert_data(structured_data)
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\cyber-threat-scraper\database\mongo_client.py", line 10, in insert_data
+    collection.insert_many(data)
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\_csot.py", line 119, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\collection.py", line 975, in insert_many
+    blk.execute(write_concern, session, _Op.INSERT)
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\bulk.py", line 751, in execute
+    return self.execute_command(generator, write_concern, session, operation)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\bulk.py", line 604, in execute_command
+    _ = client._retryable_write(
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1896, in _retryable_write
+    return self._retry_with_session(retryable, func, s, bulk, operation, operation_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1782, in _retry_with_session
+    return self._retry_internal(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\_csot.py", line 119, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1828, in _retry_internal
+    ).run()
+      ^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2565, in run
+    return self._read() if self._is_read else self._write()
+                                              ^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2673, in _write
+    self._server = self._get_server()
+                   ^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2656, in _get_server
+    return self._client._select_server(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1647, in _select_server
+    server = topology.select_server(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\topology.py", line 402, in select_server
+    server = self._select_server(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\topology.py", line 380, in _select_server
+    servers = self.select_servers(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\topology.py", line 287, in select_servers
+    server_descriptions = self._select_servers_loop(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\topology.py", line 337, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 67c214b5b9ad4c708ff3b8c2, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2025-03-01 01:26:54,335 - INFO - Starting AlienVault Scraper (Attempt 3/3)
+2025-03-01 01:26:54,358 - ERROR - Blog Scraper failed on attempt 1: localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 67c214b5b9ad4c708ff3b8c2, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+Traceback (most recent call last):
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\cyber-threat-scraper\main.py", line 30, in run_scraper
+    await scraper_func()
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\cyber-threat-scraper\scrapers\blog_scraper.py", line 59, in scrape_blog
+    insert_data(all_articles)
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\cyber-threat-scraper\database\mongo_client.py", line 10, in insert_data
+    collection.insert_many(data)
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\_csot.py", line 119, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\collection.py", line 975, in insert_many
+    blk.execute(write_concern, session, _Op.INSERT)
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\bulk.py", line 751, in execute
+    return self.execute_command(generator, write_concern, session, operation)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\bulk.py", line 604, in execute_command
+    _ = client._retryable_write(
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1896, in _retryable_write
+    return self._retry_with_session(retryable, func, s, bulk, operation, operation_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1782, in _retry_with_session
+    return self._retry_internal(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\_csot.py", line 119, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1828, in _retry_internal
+    ).run()
+      ^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2565, in run
+    return self._read() if self._is_read else self._write()
+                                              ^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2673, in _write
+    self._server = self._get_server()
+                   ^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2656, in _get_server
+    return self._client._select_server(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1647, in _select_server
+    server = topology.select_server(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\topology.py", line 402, in select_server
+    server = self._select_server(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\topology.py", line 380, in _select_server
+    servers = self.select_servers(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\topology.py", line 287, in select_servers
+    server_descriptions = self._select_servers_loop(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\topology.py", line 337, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 67c214b5b9ad4c708ff3b8c2, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2025-03-01 01:26:54,373 - INFO - Starting Blog Scraper (Attempt 2/3)
+2025-03-01 01:27:26,812 - ERROR - AlienVault Scraper failed on attempt 3: localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 67c214b5b9ad4c708ff3b8c2, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+Traceback (most recent call last):
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\cyber-threat-scraper\main.py", line 32, in run_scraper
+    await asyncio.to_thread(scraper_func)
+  File "C:\Program Files\Python312\Lib\asyncio\threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\cyber-threat-scraper\scrapers\alienvault_otx_scraper.py", line 47, in fetch_alienvault_threats
+    insert_data(structured_data)
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\cyber-threat-scraper\database\mongo_client.py", line 10, in insert_data
+    collection.insert_many(data)
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\_csot.py", line 119, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\collection.py", line 975, in insert_many
+    blk.execute(write_concern, session, _Op.INSERT)
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\bulk.py", line 751, in execute
+    return self.execute_command(generator, write_concern, session, operation)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\bulk.py", line 604, in execute_command
+    _ = client._retryable_write(
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1896, in _retryable_write
+    return self._retry_with_session(retryable, func, s, bulk, operation, operation_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1782, in _retry_with_session
+    return self._retry_internal(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\_csot.py", line 119, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1828, in _retry_internal
+    ).run()
+      ^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2565, in run
+    return self._read() if self._is_read else self._write()
+                                              ^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2673, in _write
+    self._server = self._get_server()
+                   ^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2656, in _get_server
+    return self._client._select_server(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1647, in _select_server
+    server = topology.select_server(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\topology.py", line 402, in select_server
+    server = self._select_server(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\topology.py", line 380, in _select_server
+    servers = self.select_servers(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\topology.py", line 287, in select_servers
+    server_descriptions = self._select_servers_loop(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\topology.py", line 337, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 67c214b5b9ad4c708ff3b8c2, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2025-03-01 01:27:26,826 - CRITICAL - AlienVault Scraper failed after 3 attempts. Moving on.
+2025-03-01 01:28:04,373 - ERROR - Blog Scraper failed on attempt 2: localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 67c214b5b9ad4c708ff3b8c2, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+Traceback (most recent call last):
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\cyber-threat-scraper\main.py", line 30, in run_scraper
+    await scraper_func()
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\cyber-threat-scraper\scrapers\blog_scraper.py", line 59, in scrape_blog
+    insert_data(all_articles)
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\cyber-threat-scraper\database\mongo_client.py", line 10, in insert_data
+    collection.insert_many(data)
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\_csot.py", line 119, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\collection.py", line 975, in insert_many
+    blk.execute(write_concern, session, _Op.INSERT)
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\bulk.py", line 751, in execute
+    return self.execute_command(generator, write_concern, session, operation)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\bulk.py", line 604, in execute_command
+    _ = client._retryable_write(
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1896, in _retryable_write
+    return self._retry_with_session(retryable, func, s, bulk, operation, operation_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1782, in _retry_with_session
+    return self._retry_internal(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\_csot.py", line 119, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1828, in _retry_internal
+    ).run()
+      ^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2565, in run
+    return self._read() if self._is_read else self._write()
+                                              ^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2673, in _write
+    self._server = self._get_server()
+                   ^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2656, in _get_server
+    return self._client._select_server(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1647, in _select_server
+    server = topology.select_server(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\topology.py", line 402, in select_server
+    server = self._select_server(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\topology.py", line 380, in _select_server
+    servers = self.select_servers(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\topology.py", line 287, in select_servers
+    server_descriptions = self._select_servers_loop(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\topology.py", line 337, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 67c214b5b9ad4c708ff3b8c2, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2025-03-01 01:28:04,386 - INFO - Starting Blog Scraper (Attempt 3/3)
+2025-03-01 01:29:15,516 - ERROR - Blog Scraper failed on attempt 3: localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 67c214b5b9ad4c708ff3b8c2, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+Traceback (most recent call last):
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\cyber-threat-scraper\main.py", line 30, in run_scraper
+    await scraper_func()
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\cyber-threat-scraper\scrapers\blog_scraper.py", line 59, in scrape_blog
+    insert_data(all_articles)
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\cyber-threat-scraper\database\mongo_client.py", line 10, in insert_data
+    collection.insert_many(data)
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\_csot.py", line 119, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\collection.py", line 975, in insert_many
+    blk.execute(write_concern, session, _Op.INSERT)
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\bulk.py", line 751, in execute
+    return self.execute_command(generator, write_concern, session, operation)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\bulk.py", line 604, in execute_command
+    _ = client._retryable_write(
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1896, in _retryable_write
+    return self._retry_with_session(retryable, func, s, bulk, operation, operation_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1782, in _retry_with_session
+    return self._retry_internal(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\_csot.py", line 119, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1828, in _retry_internal
+    ).run()
+      ^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2565, in run
+    return self._read() if self._is_read else self._write()
+                                              ^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2673, in _write
+    self._server = self._get_server()
+                   ^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2656, in _get_server
+    return self._client._select_server(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1647, in _select_server
+    server = topology.select_server(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\topology.py", line 402, in select_server
+    server = self._select_server(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\topology.py", line 380, in _select_server
+    servers = self.select_servers(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\topology.py", line 287, in select_servers
+    server_descriptions = self._select_servers_loop(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\env\Lib\site-packages\pymongo\synchronous\topology.py", line 337, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 67c214b5b9ad4c708ff3b8c2, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2025-03-01 01:29:15,528 - CRITICAL - Blog Scraper failed after 3 attempts. Moving on.
+2025-03-01 01:53:43,081 - INFO - Starting Blog Scraper (Attempt 1/3)
+2025-03-01 01:53:43,082 - INFO - Starting AlienVault Scraper (Attempt 1/3)
+2025-03-01 01:53:45,434 - INFO - AlienVault Scraper completed successfully.
+2025-03-01 01:54:29,378 - INFO - Blog Scraper completed successfully.
+2025-03-01 03:20:23,381 - INFO - Starting Blog Scraper (Attempt 1/3)
+2025-03-01 03:20:23,382 - INFO - Starting AlienVault Scraper (Attempt 1/3)
+2025-03-01 03:20:28,915 - INFO - AlienVault Scraper completed successfully.
+2025-03-01 03:21:14,393 - INFO - Blog Scraper completed successfully.
+2025-03-01 03:29:54,318 - INFO - Starting Blog Scraper (Attempt 1/3)
+2025-03-01 03:29:54,319 - INFO - Starting AlienVault Scraper (Attempt 1/3)
+2025-03-01 03:29:57,342 - INFO - AlienVault Scraper completed successfully.
+2025-03-01 03:30:39,647 - INFO - Blog Scraper completed successfully.
+2025-03-01 03:33:19,558 - INFO - Starting Blog Scraper (Attempt 1/3)
+2025-03-01 03:33:19,559 - INFO - Starting AlienVault Scraper (Attempt 1/3)
+2025-03-01 03:33:21,794 - ERROR - AlienVault Scraper failed on attempt 1: insert_data() missing 1 required positional argument: 'collection_name'
+Traceback (most recent call last):
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\cyber-threat-scraper\main.py", line 31, in run_scraper
+    await asyncio.to_thread(scraper_func)
+  File "C:\Program Files\Python312\Lib\asyncio\threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\cyber-threat-scraper\scrapers\alienvault_otx_scraper.py", line 47, in fetch_alienvault_threats
+    insert_data(structured_data)
+TypeError: insert_data() missing 1 required positional argument: 'collection_name'
+2025-03-01 03:33:21,802 - INFO - Starting AlienVault Scraper (Attempt 2/3)
+2025-03-01 03:33:23,488 - ERROR - AlienVault Scraper failed on attempt 2: insert_data() missing 1 required positional argument: 'collection_name'
+Traceback (most recent call last):
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\cyber-threat-scraper\main.py", line 31, in run_scraper
+    await asyncio.to_thread(scraper_func)
+  File "C:\Program Files\Python312\Lib\asyncio\threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\cyber-threat-scraper\scrapers\alienvault_otx_scraper.py", line 47, in fetch_alienvault_threats
+    insert_data(structured_data)
+TypeError: insert_data() missing 1 required positional argument: 'collection_name'
+2025-03-01 03:33:23,491 - INFO - Starting AlienVault Scraper (Attempt 3/3)
+2025-03-01 03:33:25,323 - ERROR - AlienVault Scraper failed on attempt 3: insert_data() missing 1 required positional argument: 'collection_name'
+Traceback (most recent call last):
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\cyber-threat-scraper\main.py", line 31, in run_scraper
+    await asyncio.to_thread(scraper_func)
+  File "C:\Program Files\Python312\Lib\asyncio\threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\cyber-threat-scraper\scrapers\alienvault_otx_scraper.py", line 47, in fetch_alienvault_threats
+    insert_data(structured_data)
+TypeError: insert_data() missing 1 required positional argument: 'collection_name'
+2025-03-01 03:33:25,327 - CRITICAL - AlienVault Scraper failed after 3 attempts. Moving on.
+2025-03-01 03:34:02,945 - ERROR - Blog Scraper failed on attempt 1: insert_data() missing 1 required positional argument: 'collection_name'
+Traceback (most recent call last):
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\cyber-threat-scraper\main.py", line 29, in run_scraper
+    await scraper_func()
+  File "D:\D Drive\Users\Admin\Desktop\scrapper\cyber-threat-scraper\scrapers\blog_scraper.py", line 60, in scrape_blog
+    insert_data(all_articles)
+TypeError: insert_data() missing 1 required positional argument: 'collection_name'
+2025-03-01 03:34:02,948 - INFO - Starting Blog Scraper (Attempt 2/3)
+2025-03-01 03:34:11,882 - INFO - Script interrupted. Exiting gracefully.
+2025-03-01 03:34:19,299 - INFO - Starting Blog Scraper (Attempt 1/3)
+2025-03-01 03:34:19,300 - INFO - Starting AlienVault Scraper (Attempt 1/3)
+2025-03-01 03:34:21,321 - INFO - AlienVault Scraper completed successfully.
+2025-03-01 03:34:59,246 - INFO - Blog Scraper completed successfully.
+2025-03-01 03:41:48,514 - INFO - Starting AlienVault Scraper (Attempt 1/3)
+2025-03-01 03:41:52,466 - INFO - AlienVault Scraper completed successfully.
+2025-03-01 03:45:28,355 - INFO - Starting AlienVault Scraper (Attempt 1/3)
+2025-03-01 03:45:39,385 - INFO - AlienVault Scraper completed successfully.
+2025-03-01 04:01:34,827 - INFO - Starting AlienVault Scraper (Attempt 1/3)
+2025-03-01 04:01:36,841 - INFO - AlienVault Scraper completed successfully.

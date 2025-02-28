@@ -1,0 +1,3 @@
+{"timestamp": "2025-03-01T05:39:51", "attacker_ip": "192.168.1.111", "attack_method": "Phishing", "severity": 3, "frequency": 2, "tools_used": 1, "attacker_type": "Script Kiddie", "deception_applied": "Inject fake credentials"}
+{"timestamp": "2025-03-01T05:39:52", "attacker_ip": "192.168.1.132", "attack_method": "SQL Injection", "severity": 8, "frequency": 5, "tools_used": 4, "attacker_type": "Advanced Persistent Threat", "deception_applied": "Send fake admin credentials"}
+{"timestamp": "2025-03-01T05:39:53", "attacker_ip": "192.168.1.122", "attack_method": "DDoS", "severity": 5, "frequency": 12, "tools_used": 2, "attacker_type": "Hacktivist", "deception_applied": "Simulate fake DDoS countermeasures"}

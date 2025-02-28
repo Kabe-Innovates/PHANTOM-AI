@@ -1,0 +1,137 @@
+[
+    {
+        "url": "https://otx.alienvault.com/pulse/67b31942143b95827551dee8",
+        "title": "Don't Ghost the SocGholish: GhostWeaver Backdoor",
+        "description": "The article details a sophisticated malware infection chain involving SocGholish, MintsLoader, and the GhostWeaver backdoor. The attack begins with a fake browser update, progressing through multiple stages to deploy a PowerShell backdoor and various plugins. These components work together to steal sensitive information, including browser credentials, cryptocurrency wallet data, and Outlook contents. The malware utilizes advanced techniques such as process injection, JA3 fingerprint manipulation, and web injection to evade detection and intercept user data. The attackers primarily target non-AD-joined machines, suggesting a focus on smaller organizations or individual users with weaker security measures.",
+        "date": "2025-02-17T11:10:58.724000",
+        "predicted_class": "Ransomware",
+        "predicted_attack": 24.844288769155074,
+        "attacker_profile": 3
+    },
+    {
+        "url": "https://otx.alienvault.com/pulse/679a27c8959aaeb76da166ed",
+        "title": "Cyber Espionage Operation Expanding from Central Asia",
+        "description": "An active cyber-espionage campaign by UAC-0063 is targeting organizations in Central Asia and Europe, including government entities and diplomatic missions. The group exploits previously compromised victims by weaponizing exfiltrated documents to deliver HATVIBE malware. They use sophisticated tools like DownExPyer, PyPlunderPlug, and LOGPIE for data exfiltration and keylogging. The campaign has expanded beyond Central Asia to European countries such as Germany, the UK, Netherlands, Romania, and Georgia. The group's tactics include initial access through weaponized documents, persistent access via scheduled tasks, and various data collection methods. While there are similarities with APT28, definitive attribution remains uncertain. The ongoing operations and infrastructure maintenance indicate an active and evolving threat.",
+        "date": "2025-01-29T13:06:16.073000",
+        "predicted_class": "Ransomware",
+        "predicted_attack": 24.843093132372527,
+        "attacker_profile": 3
+    },
+    {
+        "url": "https://otx.alienvault.com/pulse/679a2613007f9da5db46eb5f",
+        "title": "Phorpiex - Downloader Delivering Ransomware",
+        "description": "The report analyzes the Phorpiex botnet's role in delivering LockBit Black Ransomware. It highlights the automated execution of ransomware through Phorpiex, minimal changes to the botnet's code since its source code sale in 2021, and direct deployment of LockBit without network expansion. The analysis covers the infection flow, phishing emails, and technical details of different Phorpiex variants. Key features include URL cache deletion, library obfuscation, indicator removal, and persistence mechanisms. The report also provides a comparative analysis of LockBit, GandCrab, and TWIZT downloader variants, along with IOCs and MITRE ATT&CK mapping.",
+        "date": "2025-01-29T12:58:59.044000",
+        "predicted_class": "Ransomware",
+        "predicted_attack": 24.843093132372527,
+        "attacker_profile": 3
+    },
+    {
+        "url": "https://otx.alienvault.com/pulse/679a1d27e031cf6d34f669e5",
+        "title": "New Aquabot Variant Targeting Mitel SIP Phones",
+        "description": "A new variant of the Mirai-based malware, Aquabot, dubbed Aquabotv3, is actively exploiting Mitel SIP phones through CVE-2024-41710. This variant introduces a novel feature for Mirai-based botnets: reporting back to the command and control server when kill signals are caught on infected devices. The malware spreads through various vulnerabilities, including Hadoop YARN, and targets IoT devices. It's being advertised as a DDoS-as-a-service on platforms like Telegram. The botnet's unique signal handling could be used to observe defensive activities or detect disruptions from competing botnets.",
+        "date": "2025-01-29T12:20:55.104000",
+        "predicted_class": "Ransomware",
+        "predicted_attack": 24.843093132372527,
+        "attacker_profile": 3
+    },
+    {
+        "url": "https://otx.alienvault.com/pulse/67c191a85d9e07817d37c35e",
+        "title": "DNS Early Detection - Fast Propagating Fake Captcha distributes LummaStealer",
+        "description": "Between October 2024 and February 2025, LummaStealer malware was distributed via fake CAPTCHA pages, targeting users who store sensitive information in browsers and cryptocurrency wallets. The malware, available as a Malware-as-a-Service, collects data for fraud and unauthorized access. Threat actors use fake CAPTCHA to establish trust and initiate obfuscated scripts, leading to secondary payloads and lateral movements. Infoblox's DNS monitoring detected malicious domains an average of 46.8 days before public reports, providing early protection for customers. Given the easy access to malicious adtech services and fake CAPTCHA content, continued and increased usage by threat actors is expected.",
+        "date": "2025-02-28T10:36:24.283000",
+        "predicted_class": "Ransomware",
+        "predicted_attack": 24.84498097992392,
+        "attacker_profile": 3
+    },
+    {
+        "url": "https://otx.alienvault.com/pulse/679aca57066d5c141e511c82",
+        "title": "CL-STA-0048: An Espionage Operation Against High-Value Targets in South Asia",
+        "description": "A sophisticated cyberespionage campaign targeting high-value entities in South Asia, particularly a telecommunications organization, has been identified. The threat actor, tracked as CL-STA-0048, employed rare techniques like 'Hex Staging' for payload delivery and DNS-based data exfiltration. The operation, likely originating from China, aimed to obtain personal information of government employees and sensitive organizational data. The attackers systematically exploited vulnerabilities in IIS, Apache Tomcat, and MSSQL services. They utilized various tools including PlugX backdoor, Cobalt Strike, and privilege escalation tools. The campaign's sophistication and objectives suggest a nation-state advanced persistent threat operation.",
+        "date": "2025-01-30T00:39:51.881000",
+        "predicted_class": "Ransomware",
+        "predicted_attack": 24.843156060624242,
+        "attacker_profile": 3
+    },
+    {
+        "url": "https://otx.alienvault.com/pulse/67b31942143b95827551dee8",
+        "title": "Don't Ghost the SocGholish: GhostWeaver Backdoor",
+        "description": "The article details a sophisticated malware infection chain involving SocGholish, MintsLoader, and the GhostWeaver backdoor. The attack begins with a fake browser update, progressing through multiple stages to deploy a PowerShell backdoor and various plugins. These components work together to steal sensitive information, including browser credentials, cryptocurrency wallet data, and Outlook contents. The malware utilizes advanced techniques such as process injection, JA3 fingerprint manipulation, and web injection to evade detection and intercept user data. The attackers primarily target non-AD-joined machines, suggesting a focus on smaller organizations or individual users with weaker security measures.",
+        "date": "2025-02-17T11:10:58.724000",
+        "predicted_class": "Ransomware",
+        "predicted_attack": 24.844288769155074,
+        "attacker_profile": 3
+    },
+    {
+        "url": "https://otx.alienvault.com/pulse/679a27c8959aaeb76da166ed",
+        "title": "Cyber Espionage Operation Expanding from Central Asia",
+        "description": "An active cyber-espionage campaign by UAC-0063 is targeting organizations in Central Asia and Europe, including government entities and diplomatic missions. The group exploits previously compromised victims by weaponizing exfiltrated documents to deliver HATVIBE malware. They use sophisticated tools like DownExPyer, PyPlunderPlug, and LOGPIE for data exfiltration and keylogging. The campaign has expanded beyond Central Asia to European countries such as Germany, the UK, Netherlands, Romania, and Georgia. The group's tactics include initial access through weaponized documents, persistent access via scheduled tasks, and various data collection methods. While there are similarities with APT28, definitive attribution remains uncertain. The ongoing operations and infrastructure maintenance indicate an active and evolving threat.",
+        "date": "2025-01-29T13:06:16.073000",
+        "predicted_class": "Ransomware",
+        "predicted_attack": 24.843093132372527,
+        "attacker_profile": 3
+    },
+    {
+        "url": "https://otx.alienvault.com/pulse/679a2613007f9da5db46eb5f",
+        "title": "Phorpiex - Downloader Delivering Ransomware",
+        "description": "The report analyzes the Phorpiex botnet's role in delivering LockBit Black Ransomware. It highlights the automated execution of ransomware through Phorpiex, minimal changes to the botnet's code since its source code sale in 2021, and direct deployment of LockBit without network expansion. The analysis covers the infection flow, phishing emails, and technical details of different Phorpiex variants. Key features include URL cache deletion, library obfuscation, indicator removal, and persistence mechanisms. The report also provides a comparative analysis of LockBit, GandCrab, and TWIZT downloader variants, along with IOCs and MITRE ATT&CK mapping.",
+        "date": "2025-01-29T12:58:59.044000",
+        "predicted_class": "Ransomware",
+        "predicted_attack": 24.843093132372527,
+        "attacker_profile": 3
+    },
+    {
+        "url": "https://otx.alienvault.com/pulse/679a1d27e031cf6d34f669e5",
+        "title": "New Aquabot Variant Targeting Mitel SIP Phones",
+        "description": "A new variant of the Mirai-based malware, Aquabot, dubbed Aquabotv3, is actively exploiting Mitel SIP phones through CVE-2024-41710. This variant introduces a novel feature for Mirai-based botnets: reporting back to the command and control server when kill signals are caught on infected devices. The malware spreads through various vulnerabilities, including Hadoop YARN, and targets IoT devices. It's being advertised as a DDoS-as-a-service on platforms like Telegram. The botnet's unique signal handling could be used to observe defensive activities or detect disruptions from competing botnets.",
+        "date": "2025-01-29T12:20:55.104000",
+        "predicted_class": "Ransomware",
+        "predicted_attack": 24.843093132372527,
+        "attacker_profile": 3
+    },
+    {
+        "url": "https://otx.alienvault.com/pulse/679aca57066d5c141e511c82",
+        "title": "CL-STA-0048: An Espionage Operation Against High-Value Targets in South Asia",
+        "description": "A sophisticated cyberespionage campaign targeting high-value entities in South Asia, particularly a telecommunications organization, has been identified. The threat actor, tracked as CL-STA-0048, employed rare techniques like 'Hex Staging' for payload delivery and DNS-based data exfiltration. The operation, likely originating from China, aimed to obtain personal information of government employees and sensitive organizational data. The attackers systematically exploited vulnerabilities in IIS, Apache Tomcat, and MSSQL services. They utilized various tools including PlugX backdoor, Cobalt Strike, and privilege escalation tools. The campaign's sophistication and objectives suggest a nation-state advanced persistent threat operation.",
+        "date": "2025-01-30T00:39:51.881000",
+        "predicted_class": "Ransomware",
+        "predicted_attack": 24.843156060624242,
+        "attacker_profile": 3
+    },
+    {
+        "url": "https://otx.alienvault.com/pulse/67b31942143b95827551dee8",
+        "title": "Don't Ghost the SocGholish: GhostWeaver Backdoor",
+        "description": "The article details a sophisticated malware infection chain involving SocGholish, MintsLoader, and the GhostWeaver backdoor. The attack begins with a fake browser update, progressing through multiple stages to deploy a PowerShell backdoor and various plugins. These components work together to steal sensitive information, including browser credentials, cryptocurrency wallet data, and Outlook contents. The malware utilizes advanced techniques such as process injection, JA3 fingerprint manipulation, and web injection to evade detection and intercept user data. The attackers primarily target non-AD-joined machines, suggesting a focus on smaller organizations or individual users with weaker security measures.",
+        "date": "2025-02-17T11:10:58.724000",
+        "predicted_class": "Ransomware",
+        "predicted_attack": 24.844288769155074,
+        "attacker_profile": 3
+    },
+    {
+        "url": "https://otx.alienvault.com/pulse/679a27c8959aaeb76da166ed",
+        "title": "Cyber Espionage Operation Expanding from Central Asia",
+        "description": "An active cyber-espionage campaign by UAC-0063 is targeting organizations in Central Asia and Europe, including government entities and diplomatic missions. The group exploits previously compromised victims by weaponizing exfiltrated documents to deliver HATVIBE malware. They use sophisticated tools like DownExPyer, PyPlunderPlug, and LOGPIE for data exfiltration and keylogging. The campaign has expanded beyond Central Asia to European countries such as Germany, the UK, Netherlands, Romania, and Georgia. The group's tactics include initial access through weaponized documents, persistent access via scheduled tasks, and various data collection methods. While there are similarities with APT28, definitive attribution remains uncertain. The ongoing operations and infrastructure maintenance indicate an active and evolving threat.",
+        "date": "2025-01-29T13:06:16.073000",
+        "predicted_class": "Ransomware",
+        "predicted_attack": 24.843093132372527,
+        "attacker_profile": 3
+    },
+    {
+        "url": "https://otx.alienvault.com/pulse/679a2613007f9da5db46eb5f",
+        "title": "Phorpiex - Downloader Delivering Ransomware",
+        "description": "The report analyzes the Phorpiex botnet's role in delivering LockBit Black Ransomware. It highlights the automated execution of ransomware through Phorpiex, minimal changes to the botnet's code since its source code sale in 2021, and direct deployment of LockBit without network expansion. The analysis covers the infection flow, phishing emails, and technical details of different Phorpiex variants. Key features include URL cache deletion, library obfuscation, indicator removal, and persistence mechanisms. The report also provides a comparative analysis of LockBit, GandCrab, and TWIZT downloader variants, along with IOCs and MITRE ATT&CK mapping.",
+        "date": "2025-01-29T12:58:59.044000",
+        "predicted_class": "Ransomware",
+        "predicted_attack": 24.843093132372527,
+        "attacker_profile": 3
+    },
+    {
+        "url": "https://otx.alienvault.com/pulse/679a1d27e031cf6d34f669e5",
+        "title": "New Aquabot Variant Targeting Mitel SIP Phones",
+        "description": "A new variant of the Mirai-based malware, Aquabot, dubbed Aquabotv3, is actively exploiting Mitel SIP phones through CVE-2024-41710. This variant introduces a novel feature for Mirai-based botnets: reporting back to the command and control server when kill signals are caught on infected devices. The malware spreads through various vulnerabilities, including Hadoop YARN, and targets IoT devices. It's being advertised as a DDoS-as-a-service on platforms like Telegram. The botnet's unique signal handling could be used to observe defensive activities or detect disruptions from competing botnets.",
+        "date": "2025-01-29T12:20:55.104000",
+        "predicted_class": "Ransomware",
+        "predicted_attack": 24.843093132372527,
+        "attacker_profile": 3
+    }
+]
